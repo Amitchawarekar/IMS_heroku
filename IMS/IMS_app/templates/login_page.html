@@ -1,0 +1,105 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static "dist/fonts1/icomoon/style.css" %}">
+
+    <link rel="stylesheet" href="{% static "dist/css/owl.carousel.min.css" %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static "dist/css/bootstrap.min.css" %}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{% static "dist/css/style.css" %}">
+
+    <title>Institute Management System | Log in</title>
+    <style>
+      .message{
+        margin-top:10px; text-align:center; background: #ef5350; color: white; font-size: 16px;
+      }
+      p{
+        font-size : 30px;
+        font-display: True;
+        color : #7e57c2;
+
+      }
+    </style>
+  </head>
+  <body>
+  
+
+  
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static "dist/img/undraw_remotely_2j6y.svg" %}" alt="Image" width="700" height="10" class="img-fluid" >
+        </div>
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4">
+              <p class="mb-4"> <b style="">&nbsp;&nbsp;&nbsp;Institute Management &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System </b></p>
+            </div>
+            <form action="/doLogin" method="post">
+              {% csrf_token %}
+              <div class="form-group first">
+                <label for="username"><b style="font-size:20px;">Username</b></label>
+                <input type="email" class="form-control"  name="email">
+
+              </div>
+
+
+              <div class="form-group last mb-4">
+                <label for="password"><b style="font-size:20px;">Password</b></label>
+                <input type="password" class="form-control"  name="password">
+                
+              </div>
+              <div class="d-flex mb-5 align-items-center">
+                <label class="control control--checkbox mb-0"><span class="caption">Remember me</span>
+                  <input type="checkbox" checked="checked"/>
+                  <div class="control__indicator"></div>
+                </label>
+                <span class="ml-auto"><a href="{% url 'password_reset' %}" class="forgot-pass">Reset Password</a></span> 
+              </div>
+              
+
+              <input type="submit" value="Sign In" class="btn btn-block btn-primary">
+
+              
+            </div>
+            </div>
+            <div class="row">
+              {% if messages %}
+             <div class="col-12">
+                {% for message in messages %}
+                {% if message.tags == 'error' %}
+                <div class="alert alert-danger message">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+              </div>
+              {% endif %}
+            </div>
+            </form>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  
+    <script src="{% static "dist/js/jquery-3.3.1.min.js" %}"></script>
+    <script src="{% static "dist/js/popper.min.js" %}"></script>
+    <script src="{% static "dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "dist/js/main.js" %}"></script>
+  </body>
+</html>

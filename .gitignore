@@ -127,3 +127,20 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#ignore static
+static
+#ignore media
+media
+
+#ignore notes
+notepad.txt
+
+#ignore .idea
+.idea
+
+# 
+login-form-07
+login-form-07.zip
+._login-form-07
+AdminLTE-3.0.2.zip

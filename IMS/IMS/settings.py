@@ -13,8 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -29,9 +28,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR,"media")
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR,"static")
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["institutemanagementsystem05.herokuapp.com"]
 
 
 # Application definition
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -83,19 +83,19 @@ WSGI_APPLICATION = 'IMS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ims',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST' : '127.0.0.1',
-        'PORT' : '3306',
-        'OPTIONS' : {
-            'init_command': 'SET default_storage_engine=INNODB'
-        } 
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
+          'ENGINE': 'django.db.backends.sqlite3',
+          'NAME': os.path.join(BASE_DIR, 'ims.sqlite3'),
 
-    }
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'ims',
+        # 'USER': 'root',
+        # 'PASSWORD': '',
+        # 'HOST' : '127.0.0.1',
+        # 'PORT' : '3306',
+        # 'OPTIONS' : {
+        #     'init_command': 'SET default_storage_engine=INNODB'
+         
+      }
 }
 
 
@@ -153,3 +153,10 @@ EMAIL_HOST_USER = "amit.chawarekar@gmail.com"
 EMAIL_HOST_PASSWORD ="Amit!cricketer"
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "Institute Management System <amit.chawarekar@gmail.com>"
+
+#Enable Only Making Project Live on Heroku
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+import dj_database_url
+prod_db=dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)

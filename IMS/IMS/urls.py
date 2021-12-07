@@ -37,12 +37,12 @@ urlpatterns = [
     path('add_subject',HodViews.add_subject, name='add_subject'),
     path('add_subject_save',HodViews.add_subject_save, name='add_subject_save'),
     path('manage_staff',HodViews.manage_staff, name='manage_staff'),
-    path('manage_student',HodViews.manage_student, name='manage_student'),    
-    path('manage_course',HodViews.manage_course, name='manage_course'),    
-    path('manage_subject',HodViews.manage_subject, name='manage_subject'),    
-    path('edit_staff/<str:staff_id>',HodViews.edit_staff, name='edit_staff'),    
-    path('edit_staff_save',HodViews.edit_staff_save, name='edit_staff_save'),    
-    path('edit_student/<str:student_id>',HodViews.edit_student, name='edit_student'),    
+    path('manage_student',HodViews.manage_student, name='manage_student'),
+    path('manage_course',HodViews.manage_course, name='manage_course'),
+    path('manage_subject',HodViews.manage_subject, name='manage_subject'),
+    path('edit_staff/<str:staff_id>',HodViews.edit_staff, name='edit_staff'),
+    path('edit_staff_save',HodViews.edit_staff_save, name='edit_staff_save'),
+    path('edit_student/<str:student_id>',HodViews.edit_student, name='edit_student'),
     path('edit_student_save',HodViews.edit_student_save, name='edit_student_save'),
     path('add_student_recipt',HodViews.add_student_recipt, name='add_student_recipt'),
     path('add_student_recipt_save',HodViews.add_student_recipt_save, name='add_student_recipt_save'),
@@ -50,11 +50,11 @@ urlpatterns = [
     # path('edit_student_recipt',HodViews.edit_student_recipt, name='edit_student_recipt'),
     # path('GeneratePdf/',HodViews.GeneratePdf.as_view(), name='GeneratePdf'),
 
-    path('edit_subject/<str:subject_id>',HodViews.edit_subject, name='edit_subject'),    
-    path('edit_subject_save',HodViews.edit_subject_save, name='edit_subject_save'),    
-    path('edit_course/<str:course_id>',HodViews.edit_course, name='edit_course'),    
-    path('edit_course_save',HodViews.edit_course_save, name='edit_course_save'),    
-    path('manage_session',HodViews.manage_session, name='manage_session'),    
+    path('edit_subject/<str:subject_id>',HodViews.edit_subject, name='edit_subject'),
+    path('edit_subject_save',HodViews.edit_subject_save, name='edit_subject_save'),
+    path('edit_course/<str:course_id>',HodViews.edit_course, name='edit_course'),
+    path('edit_course_save',HodViews.edit_course_save, name='edit_course_save'),
+    path('manage_session',HodViews.manage_session, name='manage_session'),
     path('add_session_duration_save',HodViews.add_session_duration_save, name='add_session_duration_save'),
     path('check_email_exist',HodViews.check_email_exist, name='check_email_exist'),
     path('check_username_exist',HodViews.check_username_exist, name='check_username_exist'),
@@ -67,7 +67,7 @@ urlpatterns = [
     path('admin_get_attendance_student',HodViews.admin_get_attendance_student, name='admin_get_attendance_student'),
     path('admin_profile',HodViews.admin_profile, name='admin_profile'),
     path('admin_profile_save',HodViews.admin_profile_save, name='admin_profile_save'),
-    
+
 
 
     #Staff URL Path

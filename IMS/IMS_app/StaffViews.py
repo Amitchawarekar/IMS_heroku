@@ -1,4 +1,3 @@
-from typing_extensions import final
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -33,7 +32,7 @@ def staff_home(request):
     # Fetching all Subject count  under staff
     subject_count = subjects.count()
 
-    # Fetching Attendance Data by Subject 
+    # Fetching Attendance Data by Subject
     subject_list=[]
     attendance_list=[]
     for subject in subjects:
@@ -56,7 +55,7 @@ def staff_home(request):
 
 
     return render(request,"staff_templates/staff_home_template.html",{'students_count':students_count,'attendance_count':attendance_count,'subject_count':subject_count,'subject_list':subject_list,"attendance_list":attendance_list,'student_list':student_list,'present_list':student_list_attendance_present,'absent_list':student_list_attendance_absent})
-    
+
 
 def staff_take_attendance(request):
     subjects=Subjects.objects.filter(staff_id=request.user.id)
@@ -71,7 +70,7 @@ def get_students(request):
     subject=Subjects.objects.get(id=subject_id)
     session_model=SessionYearModel.object.get(id=session_duration)
     students=Students.objects.filter(course_id=subject.course_id,session_year_id=session_model)
-   
+
     list_data=[]
 
     for student in students:
@@ -212,7 +211,7 @@ def staff_profile_save(request):
 
 def staff_add_result(request):
     subjects=Subjects.objects.filter(staff_id=request.user.id)
-    session_years=SessionYearModel.object.all()   
+    session_years=SessionYearModel.object.all()
     return render(request,'staff_templates/staff_add_result_template.html',{'subjects':subjects,'session_years':session_years})
 
 def save_student_result(request):
@@ -232,7 +231,7 @@ def save_student_result(request):
             if check_exist:
                 result = StudentResult.objects.get(subject_id=subject_obj,student_id=student_obj)
                 result.subject_obj_marks = obj_marks
-                result.subject_pract_marks = pract_marks 
+                result.subject_pract_marks = pract_marks
                 result.save()
 
                 messages.success(request, "Successfully Updated Student Result")

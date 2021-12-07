@@ -122,7 +122,7 @@ def add_student_save(request):
             fs = FileSystemStorage()
             filename=fs.save(profile_pic.name,profile_pic)
             profile_pic_url=fs.url(filename)
-            
+
             try:
                 #Creating customuser
                 user = CustomUser.objects.create_user(username=username,password=password,email=email,first_name=first_name,last_name=last_name,user_type=3)
@@ -301,10 +301,10 @@ def edit_student_save(request):
                 student.address=address
                 session_duration = SessionYearModel.object.get(id=session_year_id)
                 student.session_year_id=session_duration
-               
+
                 course_obj=Courses.objects.get(id=course_id)
                 user.students.course_id=course_obj
-                
+
                 if profile_pic_url !=None:
                     student.profile_pic= profile_pic_url
                 student.gender=sex
@@ -357,7 +357,7 @@ def edit_subject_save(request):
             subject.course_id = course
             subject.save()
 
-           
+
             messages.success(request,"Successfully Edited Subject")
             return HttpResponseRedirect(reverse("edit_subject",kwargs={"subject_id":subject_id}))
 
@@ -386,7 +386,7 @@ def edit_course_save(request):
         except:
             messages.error(request,"Failed to Edit Course")
             return HttpResponseRedirect(reverse("edit_course", kwargs={"course_id":course_id}))
-        
+
 
 def manage_session(request):
     return render(request, 'hod_templates/manage_session_template.html')
@@ -544,7 +544,7 @@ def add_student_recipt_save(request):
 
 def manage_student_recipt(request):
     recipts = StudentRecipt.objects.all()
-   
+
     return render(request, 'hod_templates/manage_student_recipt_template.html',{"recipts":recipts})
 
 # def edit_student_recipt(request, recipt_id):

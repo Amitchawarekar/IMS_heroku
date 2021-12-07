@@ -59,6 +59,13 @@ This Project has 3 Panels (Admin Panel, Staff Panel, Student Panel).
 - Student Result Management Functionality
 - Student Fee Recipt Management Functionality
 
+## Deployment 
+I have deployed this project on heroku with sqlite3 database
+
+Link :- 
+[IMS](https://institutemanagementsystem05.herokuapp.com/)
+
+
 ## Acknowledgements
 
  - [AdminLTE3 Dashboard](https://adminlte.io/themes/v3/)
@@ -129,14 +136,4 @@ how to solve those by doing research and I overcome the challenge.
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-
-## Deployment
-
-To deploy this project run
-
-```bash
-  npm run deploy
-```
-
 

@@ -9,10 +9,11 @@ Any Educational Institute can use this project for Student and Staff Management 
 
 - [Brief Description](#BriefDescription)
 - [Features](#Features)
+- [DeploymentLink](#Deployment)
 - [Acknowlegements](#Acknowlegements)
 - [License](#License)
 - [Lessons](#Lessons)
-- [Run Locally](#RunLocally)
+- [RunLocally](#RunLocally)
 - [Screenshots](#Screenshots)
 ## Brief Description
 
@@ -64,6 +65,7 @@ I have deployed this project on heroku with sqlite3 database
 
 Link :- 
 [IMS](https://institutemanagementsystem05.herokuapp.com/)
+
 
 
 ## Acknowledgements
@@ -135,5 +137,16 @@ how to solve those by doing research and I overcome the challenge.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+<h4>Login Page</h4>
+<img src="screenshots/login_page.png" alt="login_page" width="850" height="350">
+
+<h4>Admin Home Page</h4>
+<img src="screenshots/admin_page.png" alt="admin_page" width="850" height="350">
+
+<h4>Staff Home Page</h4>
+<img src="screenshots/staff_page.png" alt="staff_page" width="850" height="350">
+
+<h4>Student Home Page</h4>
+<img src="screenshots/student_page.png" alt="student_page" width="850" height="350">
+
 
